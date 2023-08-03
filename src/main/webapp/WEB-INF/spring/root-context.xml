@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 객체를 생성할 때 쓰는 태그 bean -->
+
+	<!-- HikariCP API -->
+	<!-- 1. HikariConfig에 DB정보들을 입력 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/com"/>
+		<property name="username" value="com"/>
+		<property name="password" value="com01"/>
+	</bean>
+	
+	<!-- 2. HikariDataSource가 connection pool을 만든다 -->
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig"/>
+	</bean>
+	
+	<!-- 3. mybatis-spring API  -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- 4. Mapper interface의 위치(scan)를 알려준다 -->
+	<!-- 	mybatis-spring:scan을 이용하여 Mapper interface 패키지를 알려준다. -->
+	<mybatis-spring:scan base-package="kr.yme.mapper"/>
+</beans>
