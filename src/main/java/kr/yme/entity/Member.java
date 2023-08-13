@@ -12,7 +12,7 @@ public class Member {
 	private String nick;
 	private String phone;
 	private String univ;
-	private String circle_from;
+	private String circle_at;
 	private String preference;
 	private String region;
 	private String mbti;

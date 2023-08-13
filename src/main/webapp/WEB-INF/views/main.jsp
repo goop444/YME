@@ -35,7 +35,7 @@
             <div class="col-md-3 col-lg-3 me-0 px-3 fs-6">
                 <a class="navbar-brand" href="index.html">
                     <i class="bi-box"></i>
-                    Mini Finance
+                    10-minutes
                 </a>
             </div>
 
@@ -104,60 +104,6 @@
                         </ul>
                     </div>
 
-                    <div class="dropdown ps-1">
-                        <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi-three-dots-vertical"></i>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-social bg-white shadow">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-4">
-                                        <a class="dropdown-item text-center" href="#">
-                                            <img src="./resources/images/social/search.png" class="profile-image img-fluid" alt="">
-                                            <span class="d-block">Google</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-4">
-                                        <a class="dropdown-item text-center" href="#">
-                                            <img src="./resources/images/social/spotify.png" class="profile-image img-fluid" alt="">
-                                            <span class="d-block">Spotify</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-4">
-                                        <a class="dropdown-item text-center" href="#">
-                                            <img src="./resources/images/social/telegram.png" class="profile-image img-fluid" alt="">
-                                            <span class="d-block">Telegram</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-4">
-                                        <a class="dropdown-item text-center" href="#">
-                                            <img src="./resources/images/social/snapchat.png" class="profile-image img-fluid" alt="">
-                                            <span class="d-block">Snapchat</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-4">
-                                        <a class="dropdown-item text-center" href="#">
-                                            <img src="./resources/images/social/tiktok.png" class="profile-image img-fluid" alt="">
-                                            <span class="d-block">Tiktok</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-4">
-                                        <a class="dropdown-item text-center" href="#">
-                                            <img src="./resources/images/social/youtube.png" class="profile-image img-fluid" alt="">
-                                            <span class="d-block">Youtube</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="dropdown px-3">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="./resources/images/medium-shot-happy-man-smiling.jpg" class="profile-image img-fluid" alt="">
@@ -215,42 +161,29 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="index.html">
                                     <i class="bi-house-fill me-2"></i>
-                                    Overview
+                                    메인
                                 </a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="wallet.html">
                                     <i class="bi-wallet me-2"></i>
-                                    My Wallet
+                                    동아리 찾기
                                 </a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="profile.html">
                                     <i class="bi-person me-2"></i>
-                                    Profile
+                                    모임 찾기
                                 </a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="setting.html">
                                     <i class="bi-gear me-2"></i>
-                                    Settings
+                                    내 정보
                                 </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="help-center.html">
-                                    <i class="bi-question-circle me-2"></i>
-                                    Help Center
-                                </a>
-                            </li>
-
-                            <li class="nav-item featured-box mt-lg-5 mt-4 mb-4">
-                                <img src="./resources/images/credit-card.png" class="img-fluid" alt="">
-
-                                <a class="btn custom-btn" href="#">Upgrade</a>
                             </li>
 
                             <li class="nav-item border-top mt-auto pt-2">
@@ -264,312 +197,178 @@
                 </nav>
 
                 <main class="main-wrapper col-md-9 ms-sm-auto py-4 col-lg-9 px-md-4 border-start">
-                    <div class="title-group mb-3">
-                        <h1 class="h2 mb-0">Overview</h1>
+                    <div class="title-group mb-3" style="text-align: center;">
+                        <h1 class="h2 mb-0">{user_school} {user_name}님,</h1>
 
-                        <small class="text-muted">Hello Thomas, welcome back!</small>
+                        <small class="text-muted">어서오세요!</small>
                     </div>
 
                     <div class="row my-4">
-                        <div class="col-lg-7 col-12">
-                            <div class="custom-block custom-block-balance">
-                                <small>Your Balance</small>
-
-                                <h2 class="mt-2 mb-3">$254,800</h2>
-
-                                <div class="custom-block-numbers d-flex align-items-center">
-                                    <span>****</span>
-                                    <span>****</span>
-                                    <span>****</span>
-                                    <p>2560</p>
-                                </div>
-
-                                <div class="d-flex">
-                                    <div>
-                                        <small>Valid Date</small>
-                                        <p>12/2028</p>
-                                    </div>
-
-                                    <div class="ms-auto">
-                                        <small>Card Holder</small>
-                                        <p>Thomas</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="custom-block bg-white">
-                                <h5 class="mb-4">History</h5>
-
-                                <div id="pie-chart"></div>
-                            </div>
-
-                            <div class="custom-block bg-white">
-                                <div id="chart"></div>
-                            </div>
-
-                            <div class="custom-block custom-block-exchange">
-                                <h5 class="mb-4">Exchange Rate</h5>
-
-                                <div class="d-flex align-items-center border-bottom pb-3 mb-3">
-                                    <div class="d-flex align-items-center">
-                                        <img src="./resources/images/flag/united-states.png" class="exchange-image img-fluid" alt="">
-
-                                        <div>
-                                            <p>USD</p>
-                                            <h6>1 US Dollar</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-auto me-4">
-                                        <small>Sell</small>
-                                        <h6>1.0931</h6>
-                                    </div>
-
-                                    <div>
-                                        <small>Buy</small>
-                                        <h6>1.0821</h6>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center border-bottom pb-3 mb-3">
-                                    <div class="d-flex align-items-center">
-                                        <img src="./resources/images/flag/singapore.png" class="exchange-image img-fluid" alt="">
-
-                                        <div>
-                                            <p>SGD</p>
-                                            <h6>1 Singapore Dollar</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-auto me-4">
-                                        <small>Sell</small>
-                                        <h6>0.6901</h6>
-                                    </div>
-
-                                    <div>
-                                        <small>Buy</small>
-                                        <h6>0.6201</h6>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center border-bottom pb-3 mb-3">
-                                    <div class="d-flex align-items-center">
-                                        <img src="./resources/images/flag/united-kingdom.png" class="exchange-image img-fluid" alt="">
-
-                                        <div>
-                                            <p>GPD</p>
-                                            <h6>1 British Pound</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-auto me-4">
-                                        <small>Sell</small>
-                                        <h6>1.1520</h6>
-                                    </div>
-
-                                    <div>
-                                        <small>Buy</small>
-                                        <h6>1.1412</h6>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center border-bottom pb-3 mb-3">
-                                    <div class="d-flex align-items-center">
-                                        <img src="./resources/images/flag/australia.png" class="exchange-image img-fluid" alt="">
-
-                                        <div>
-                                            <p>AUD</p>
-                                            <h6>1 Australian Dollar</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-auto me-4">
-                                        <small>Sell</small>
-                                        <h6>0.6110</h6>
-                                    </div>
-
-                                    <div>
-                                        <small>Buy</small>
-                                        <h6>0.5110</h6>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <img src="./resources/images/flag/european-union.png" class="exchange-image img-fluid" alt="">
-
-                                        <div>
-                                            <p>EUR</p>
-                                            <h6>1 Euro</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-auto me-4">
-                                        <small>Sell</small>
-                                        <h6>1.1020</h6>
-                                    </div>
-
-                                    <div>
-                                        <small>Buy</small>
-                                        <h6>1.1010</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-5 col-12">
+                        <div class="col-lg-5 col-12" style="width: 100%;">
                             <div class="custom-block custom-block-profile-front custom-block-profile text-center bg-white">
                                 <div class="custom-block-profile-image-wrap mb-4">
                                     <img src="./resources/images/medium-shot-happy-man-smiling.jpg" class="custom-block-profile-image img-fluid" alt="">
 
                                     <a href="setting.html" class="bi-pencil-square custom-block-edit-icon"></a>
                                 </div>
+									<div class="custom-block custom-block-bottom d-flex flex-wrap" style="margin-bottom: 0px;">
+	                                <div class="custom-block-bottom-item">
+	                                    <a href="#" class="d-flex flex-column">
+	                                        <i class="custom-block-icon bi-wallet"></i>
+	
+	                                        <small>내 동아리</small>
+	                                    </a>
+	                                </div>
+	
+	                                <div class="custom-block-bottom-item">
+	                                    <a href="#" class="d-flex flex-column">
+	                                        <i class="custom-block-icon bi-upc-scan"></i>
+	
+	                                        <small>내 모임</small>
+	                                    </a>
+	                                </div>
+	
+	                                <div class="custom-block-bottom-item">
+	                                    <a href="#" class="d-flex flex-column">
+	                                        <i class="custom-block-icon bi-send"></i>
+	
+	                                        <small>채팅방</small>
+	                                    </a>
+	                                </div>
+	                            </div>
+	                            </div>
+	                            <div class="custom-block custom-block-profile-front custom-block-profile text-center bg-white">
+	                            
+		                            <div class="title-group mb-3" style="text-align: left;">
+				                        <h1 class="h5 mb-0">교내 추천 동아리</h1>
+				                        <small class="text-muted">10minutes이 추천하는 {user_school}의 동아리에요</small>
+				                    </div>
+				                    <div class="job-thumb d-flex" style="padding: 10px 25px 0px 25px;">
+		                                <div class="job-image-wrap bg-white shadow-lg">
+		                                    <img src="./resources/images/circleMark.jpeg" class="job-image img-fluid" alt="">
+		                                </div>
 
-                                <p class="d-flex flex-wrap mb-2">
-                                    <strong>Name:</strong>
+		                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+		                                
+		                                    <div class="mb-3">
+		                                    	<p class="job-title mb-lg-0" style="text-align: left; font-size: 13px;">
+		                                            <a href="#" class="job-title-link">{성향}</a>
+		                                        </p>
+		                                        <h4 class="job-title mb-lg-0">
+		                                            <a href="#" class="job-title-link">{circleName}</a>
+		                                        </h4>
+		
+		                                        <div class="d-flex flex-wrap align-items-center" style="margin-top: 5px; text-align: left;">
+		                                            <p class="job-location mb-0" style="font-size: 13px;">
+		                                                <i class="custom-icon bi-geo-alt me-1"></i>
+		                                                {user_school}
+		                                            </p>
+		
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="job-thumb d-flex" style="padding: 10px 25px 0px 25px;">
+		                                <div class="job-image-wrap bg-white shadow-lg">
+		                                    <img src="./resources/images/circleMark.jpeg" class="job-image img-fluid" alt="">
+		                                </div>
 
-                                    <span>Thomas Edison</span>
-                                </p>
+		                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+		                                
+		                                    <div class="mb-3">
+		                                    	<p class="job-title mb-lg-0" style="text-align: left; font-size: 13px;">
+		                                            <a href="#" class="job-title-link">{성향}</a>
+		                                        </p>
+		                                        <h4 class="job-title mb-lg-0">
+		                                            <a href="#" class="job-title-link">{circleName}</a>
+		                                        </h4>
+		
+		                                        <div class="d-flex flex-wrap align-items-center" style="margin-top: 5px; text-align: left;">
+		                                            <p class="job-location mb-0" style="font-size: 13px;">
+		                                                <i class="custom-icon bi-geo-alt me-1"></i>
+		                                                {user_school}
+		                                            </p>
+		
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="job-thumb d-flex" style="padding: 10px 25px 0px 25px;">
+		                                <div class="job-image-wrap bg-white shadow-lg">
+		                                    <img src="./resources/images/circleMark.jpeg" class="job-image img-fluid" alt="">
+		                                </div>
 
-                                <p class="d-flex flex-wrap mb-2">
-                                    <strong>Email:</strong>
-                                    
-                                    <a href="#">
-                                        thomas@site.com
-                                    </a>
-                                </p>
-
-                                <p class="d-flex flex-wrap mb-0">
-                                    <strong>Phone:</strong>
-
-                                    <a href="#">
-                                        (60) 12 345 6789
-                                    </a>
-                                </p>
-                            </div>
-
-                            <div class="custom-block custom-block-bottom d-flex flex-wrap">
-                                <div class="custom-block-bottom-item">
-                                    <a href="#" class="d-flex flex-column">
-                                        <i class="custom-block-icon bi-wallet"></i>
-
-                                        <small>Top up</small>
-                                    </a>
-                                </div>
-
-                                <div class="custom-block-bottom-item">
-                                    <a href="#" class="d-flex flex-column">
-                                        <i class="custom-block-icon bi-upc-scan"></i>
-
-                                        <small>Scan & Pay</small>
-                                    </a>
-                                </div>
-
-                                <div class="custom-block-bottom-item">
-                                    <a href="#" class="d-flex flex-column">
-                                        <i class="custom-block-icon bi-send"></i>
-
-                                        <small>Send</small>
-                                    </a>
-                                </div>
-
-                                <div class="custom-block-bottom-item">
-                                    <a href="#" class="d-flex flex-column">
-                                        <i class="custom-block-icon bi-arrow-down"></i>
-
-                                        <small>Request</small>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="custom-block custom-block-transations">
-                                <h5 class="mb-4">Recent Transations</h5>
-
-                                <div class="d-flex flex-wrap align-items-center mb-4">
-                                    <div class="d-flex align-items-center">
-                                        <img src="./resources/images/profile/senior-man-white-sweater-eyeglasses.jpg" class="profile-image img-fluid" alt="">
-
-                                        <div>
-                                            <p>
-                                                <a href="transation-detail.html">Daniel Jones</a>
-                                            </p>
-
-                                            <small class="text-muted">C2C Transfer</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-auto">
-                                        <small>05/12/2023</small>
-                                        <strong class="d-block text-danger"><span class="me-1">-</span> $250</strong>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex flex-wrap align-items-center mb-4">
-                                    <div class="d-flex align-items-center">
-                                        <img src="./resources/images/profile/young-beautiful-woman-pink-warm-sweater.jpg" class="profile-image img-fluid" alt="">
-
-                                        <div>
-                                            <p>
-                                                <a href="transation-detail.html">Public Bank</a>
-                                            </p>
-
-                                            <small class="text-muted">Mobile Reload</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-auto">
-                                        <small>22/8/2023</small>
-                                        <strong class="d-block text-success"><span class="me-1">+</span> $280</strong>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <img src="./resources/images/profile/young-woman-with-round-glasses-yellow-sweater.jpg" class="profile-image img-fluid" alt="">
-
-                                        <div>
-                                            <p><a href="transation-detail.html">Store</a></p>
-
-                                            <small class="text-muted">Payment Received</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="ms-auto">
-                                        <small>22/8/2023</small>
-                                        <strong class="d-block text-success"><span class="me-1">+</span> $280</strong>
-                                    </div>
-                                </div>
-
-                                <div class="border-top pt-4 mt-4 text-center">
-                                    <a class="btn custom-btn" href="wallet.html">
-                                        View all transations
-                                        <i class="bi-arrow-up-right-circle-fill ms-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="custom-block primary-bg">
-                                <h5 class="text-white mb-4">Send Money</h5>
-
-                                <a href="#">
-                                    <img src="./resources/images/profile/young-woman-with-round-glasses-yellow-sweater.jpg" class="profile-image img-fluid" alt="">
-                                </a>
-
-                                <a href="#">
-                                    <img src="./resources/images/profile/young-beautiful-woman-pink-warm-sweater.jpg" class="profile-image img-fluid" alt="">
-                                </a>
-
-                                <a href="#">
-                                    <img src="./resources/images/profile/senior-man-white-sweater-eyeglasses.jpg" class="profile-image img-fluid" alt="">
-                                </a>
-
-                                <div class="profile-rounded">
-                                    <a href="#">
-                                        <i class="profile-rounded-icon bi-plus"></i>
-                                    </a>
-                                </div>
-                            </div>
-
+		                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+		                                
+		                                    <div class="mb-3">
+		                                    	<p class="job-title mb-lg-0" style="text-align: left; font-size: 13px;">
+		                                            <a href="#" class="job-title-link">{성향}</a>
+		                                        </p>
+		                                        <h4 class="job-title mb-lg-0">
+		                                            <a href="#" class="job-title-link">{circleName}</a>
+		                                        </h4>
+		
+		                                        <div class="d-flex flex-wrap align-items-center" style="margin-top: 5px; text-align: left;">
+		                                            <p class="job-location mb-0" style="font-size: 13px;">
+		                                                <i class="custom-icon bi-geo-alt me-1"></i>
+		                                                {user_school}
+		                                            </p>
+		
+		                                        </div>
+		                                    </div>
+		                                </div>
+				                    </div>
+			                    </div>
+			                    <div class="custom-block custom-block-profile-front custom-block-profile text-center bg-white">
+				                    <div class="title-group mb-3" style="text-align: left;">
+					                        <h1 class="h5 mb-0">이 달의 동아리 랭킹</h1>
+					                        <small class="text-muted">가장 활동이 많은 동아리를 알려줄 거에요</small>
+					                </div>
+					                <div class="custom-block custom-block-bottom d-flex flex-wrap" style="margin-bottom: 0px; justify-content: space-around; padding: 0px;">
+		                                <div class="nav-item featured-box mt-lg-5 mt-4 mb-4" style="background-color: white; width: 30%; text-align: left;">
+		                                	<div class="rank_title" style="color: #F8C86C; font-size: 28px;">
+												<span style="border-bottom: 3px solid; color: #F8C86C;">1</span>st
+											</div>
+											<div style="display: flex; flex-direction: column;">
+											<div class="rank_uname" style="color: #717275; font-weight: 400; font-size: 12px; line-height: 11px; padding-top: 5px;">부경대학교</div>
+												<div style="display: flex; flex-direction: row; align-items: center;">
+													<div class="rank_cname" style="font-weight: 700; font-size: 17px;">모비딕스</div>
+												</div>
+											</div>
+			                                <div class="image-wrapper">
+			                                	<img src="./resources/images/circleMark.jpeg" class="img-fluid" alt=""  style="width: auto;">
+			                                </div>
+			                            </div>
+		                                <div class="nav-item featured-box mt-lg-5 mt-4 mb-4" style="background-color: white; width: 30%; text-align: left;">
+		                                	<div class="rank_title" style="color: #ACC9DA; font-size: 28px;">
+												<span style="border-bottom: 3px solid; color: #ACC9DA;">2</span>nd
+											</div>
+											<div style="display: flex; flex-direction: column;">
+											<div class="rank_uname" style="color: #717275; font-weight: 400; font-size: 12px; line-height: 11px; padding-top: 5px;">부경대학교</div>
+												<div style="display: flex; flex-direction: row; align-items: center;">
+													<div class="rank_cname" style="font-weight: 700; font-size: 17px;">모비딕스</div>
+												</div>
+											</div>
+			                                <div class="image-wrapper">
+			                                	<img src="./resources/images/circleMark.jpeg" class="img-fluid" alt=""  style="width: auto;">
+			                                </div>
+			                            </div>
+		                                <div class="nav-item featured-box mt-lg-5 mt-4 mb-4" style="background-color: white; width: 30%; text-align: left;">
+		                                	<div class="rank_title" style="color: #DCA26C; font-size: 28px;">
+												<span style="border-bottom: 3px solid; color: #DCA26C;">3</span>rd
+											</div>
+											<div style="display: flex; flex-direction: column;">
+											<div class="rank_uname" style="color: #717275; font-weight: 400; font-size: 12px; line-height: 11px; padding-top: 5px;">부경대학교</div>
+												<div style="display: flex; flex-direction: row; align-items: center;">
+													<div class="rank_cname" style="font-weight: 700; font-size: 17px;">모비딕스</div>
+												</div>
+											</div>
+			                                <div class="image-wrapper">
+			                                	<img src="./resources/images/circleMark.jpeg" class="img-fluid" alt=""  style="width: auto;">
+			                                </div>
+			                            </div>
+		                            </div>
+		                        </div>
                         </div>
                     </div>
 
@@ -591,10 +390,10 @@
         </div>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="./resources/js/jquery.min.js"></script>
-        <script src="./resources/js/bootstrap.bundle.min.js"></script>
-        <script src="./resources/js/apexcharts.min.js"></script>
-        <script src="./resources/js/custom.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/apexcharts.min.js"></script>
+        <script src="js/custom.js"></script>
 
         <script type="text/javascript">
             var options = {

@@ -34,4 +34,3 @@
    <mybatis-spring:scan base-package="kr.yme.mapper"/>
       
 </beans>
-
