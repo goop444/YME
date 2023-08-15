@@ -167,7 +167,7 @@
 		</div>
 	</header>
 
-	<form>
+	<form id="frm" action="${cpath }/register.do" method="post">
 		<div class="swiper-container"
 			style="background: var(- -section-bg-color); min-height: calc(100vh - 65px);">
 			<div class="swiper-wrapper" style="align-items: flex-start;">
@@ -4171,7 +4171,7 @@
 				<div class="swiper-slide">
 					<div
 						class="custom-block custom-block-profile-front custom-block-profil	e text-center bg-white joinCase"
-						style="height: 150vh;">
+						style="height: 140vh;">
 						<div
 							style="font-weight: 700; font-size: 24px; line-height: 34px; padding: 78px 20px 40px 20px;">
 							<span style="font-weight: 400;">마지막 정보를 입력해 주세요!</span>
@@ -4187,7 +4187,7 @@
 								<div
 									style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
 									<div class="signup_input_2" style="width: 58%;">
-										<input class="input_title" type="text" id="#" pattern="\d*"
+										<input class="input_title" type="text" id="userid" pattern="\d*"
 											required="" placeholder="id 입력" name="id"
 											style="width: 100%; text-align: left; margin: 0; padding: 0; padding-left: 15px; border: 0;">
 									</div>
@@ -4237,11 +4237,11 @@
 								<div
 									style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
 									<div class="signup_input_2" style="width: 58%;">
-										<input class="input_title" type="text" id="#" pattern="\d*"
+										<input class="input_title" type="text" id="nick" pattern="\d*"
 											required="" placeholder="닉네임 입력" name="nick"
 											style="width: 100%; text-align: left; margin: 0; padding: 0; padding-left: 15px; border: 0;">
 									</div>
-									<div class="get_sms" onclick="$.app.web.click_sms()"
+									<div class="get_sms" onclick="check_nick()"
 										style="display: flex; justify-content: center; align-items: center; background: #CCCCCC; width: 38%; border-radius: 5px; color: #666666;">
 										중복확인</div>
 								</div>
@@ -4254,7 +4254,7 @@
 								<div
 									style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
 									<div class="signup_input_2" style="width: 100%;">
-										<input class="input_title" type="text" id="#" pattern="\d*"
+										<input class="input_title" type="text" id="circle_at" pattern="\d*"
 											required="" placeholder="소속 동아리 입력" name="circel_at"
 											style="width: 100%; text-align: left; margin: 0; padding: 0; padding-left: 15px; border: 0;">
 									</div>
@@ -4269,35 +4269,13 @@
 								<div
 									style="display: flex; flex-direction: row; justify-content: space-between; width: 100%; margin-bottom: 5px;">
 									<div class="signup_input_2" style="width: 58%;">
-										<input class="input_title" type="number" id="phone_number"
+										<input class="input_title" type="text" id="phone_number"
 											name="phone" pattern="\d*" required=""
 											placeholder="- 를 제외한 휴대폰번호"
 											style="width: 100%; text-align: left; margin: 0; padding: 0; padding-left: 15px; border: 0;">
 									</div>
-									<div class="get_sms" onclick="$.app.web.click_sms()"
-										style="display: flex; justify-content: center; align-items: center; background: #CCCCCC; width: 38%; border-radius: 5px; color: #666666;">
-										인증번호 받기</div>
-									<d class="sms_time_2" style="display: none; margin-top:0px;">
-									남은시간 <br>
-									( <d id="time">00:00</d> ) </d>
 								</div>
-								<div class="help_txt" id="phone_number_help"></div>
-								<div class="signup_input" id="sms_cert_div"
-									style="margin-bottom: 30px;">
-									<div
-										style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
-										<div class="signup_input_2" style="width: 58%;">
-											<input type="number" oninput="maxLengthCheck(this)"
-												pattern="\d*"
-												style="width: 100%; text-align: left; margin: 0; border: 0;"
-												id="cert_key" name="cert_key" class="input_title input_act"
-												placeholder="인증번호를 입력하세요">
-										</div>
-										<div onclick="sms_btn()" id="sms_btn"
-											style="display: flex; justify-content: center; align-items: center; background: #CCCCCC; width: 38%; border-radius: 5px; color: #666666;">확인</div>
-										<input type="hidden" id="cert_id" value="">
-									</div>
-								</div>
+								
 							</div>
 
 							<!-- 생년월일 -->
@@ -4307,11 +4285,10 @@
 									style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
 									<div class="signup_input_2" style="width: 58%;">
 										<input class="input_title" type="date" id="#" pattern="\d*"
-											required="" name="birthdate "
+											required="" name="birthdate"
 											style="width: 100%; text-align: left; margin: 0; padding: 0; padding-left: 15px; border: 0;">
 									</div>
 								</div>
-								<div class="help_txt" id="phone_number_help"></div>
 							</div>
 
 
@@ -4337,7 +4314,61 @@
 	<script src="./resources/js/bootstrap.bundle.min.js"></script>
 	<script src="./resources/js/apexcharts.min.js"></script>
 	<script src="./resources/js/custom.js"></script>
-
+	<script type="text/javascript">
+		function check_id() {
+			var userid = $("#userid").val();
+			
+			if(userid==""){
+				alert("아이디를 입력하세요");
+				$("#userid").focus();
+			}else{
+				$.ajax({
+					url : "${cpath}/id_check.do",
+					type : 'post',
+					data : {"userid":userid},
+					dataType : "json",
+					success : function(data){
+						if(data==1){
+							alert("아이디가 존재합니다. 다른 아이디를 입력해 주세요.");
+							$("#userid").focus();
+						}else{
+							alert("사용가능한 아이디 입니다.");
+							$("#password").focus();
+						}
+					},
+					error : function(){alert("삐용삐용");}
+				});
+			}
+			
+		}
+	</script>
+	<script type="text/javascript">
+		function check_nick() {
+			var usernick = $("#nick").val();
+			
+			if(usernick==""){
+				alert("닉네임을 입력하세요");
+				$("#nick").focus();
+			}else{
+				$.ajax({
+					url : "${cpath}/nick_check.do",
+					type : "post",
+					data : {"nick":usernick},
+					dataType : "json",
+					success : function(data){
+						if(data==1){
+							alert("닉네임이 존재합니다. 다른 닉네임을 입력해 주세요.");
+							$("#nick").focus();
+						}else{
+							alert("사용가능한 닉네임 입니다.");
+							$("#circle_at").focus();
+						}
+					},
+					error : function(){alert("삐용삐용");}
+				});
+			}
+		}
+	</script>
 	<script type="text/javascript">
 		var swiper = new Swiper('.swiper-container', {
 			// 여러 옵션들을 설정할 수 있습니다.
@@ -4405,56 +4436,10 @@
 	<script type="text/javascript">
 		function register() {
 			alert("회원가입 성공");
-
+			document.getElementById('frm').submit();
 		}
 	</script>
 
-	<script>
-		function sms_btn() {
-			var passwordValue = $("#password").val()
-			if ($("#phone_number_cert").val() === "1") {
-				alert("인증이 완료되었습니다.");
-				var uid = $("#phone_number").val();
-				$("#uid").val(uid);
-				return false;
-			}
-			if ($("#cert_key").val() === '' || $("#cert_key").val() === null) {
-				alert("인증번호를 입력해주세요.");
-				return false;
-			}
-			if ($("#cert_time_out").val() === "0") {
-				var res = $.app.web.requests("/web/sms/cert", {
-					'cert_id' : $("#cert_id").val(),
-					'cert_key' : $("#cert_key").val()
-				}, false, 'post', true);
-				if (res['result'] === true) {
-					$("#phone_number_cert").val("1");
-					alert("인증이 완료되었습니다.");
-					$("#uid").val($("#phone_number").val());
-					clear_sms()
-					$("#phone_number").attr("readonly", true);
-					if (passwordValue != '') {
-						$(".4_b_btn").addClass('submit_act');
-					}
-				} else {
-					alert(res['msg']);
-					$("#cert_key").focus();
-					return false;
-				}
-			} else {
-				alert("인증 시간이 만료되었습니다");
-			}
-		}
-		$('#cert_key').keyup(function(e) {
-			let cert_key = $(this).val();
-			if (cert_key.length < 4) {
-				$("#sms_btn").css('background', '#CCCCCC')
-				$("#sms_btn").css('color', '#666666')
-			} else {
-				$("#sms_btn").css('background', '#4CBCAF')
-				$("#sms_btn").css('color', '#FFFFFF')
-			}
-		});
-	</script>
+	
 </body>
 </html>

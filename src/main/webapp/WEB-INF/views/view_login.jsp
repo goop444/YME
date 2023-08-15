@@ -157,7 +157,7 @@
             <div class="row">
                 <main class="main-wrapper">
 					<div class="col-lg-4 col-md-7 col-12 login">
-	                            <form class="custom-form hero-form" action="#" method="get" role="form">
+	                            <form class="custom-form hero-form" action="${cpath}/login.do" method="post" role="form">
 	                                <h3 class="text-white mb-3">로그인</h3>
 	                                
 	                                <div class="row">
@@ -167,7 +167,7 @@
 			                                        <div class="input-group">
 			                                            <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 			
-			                                            <input type="text" name="#" id="#" class="form-control" placeholder="ID" required="">
+			                                            <input type="text" name="id" id="#" class="form-control" placeholder="ID" required="">
 			                                        </div>
 			                                    </div>
 			
@@ -175,7 +175,7 @@
 			                                        <div class="input-group">
 			                                            <span class="input-group-text" id="basic-addon1"><i class="bi-geo-alt custom-icon"></i></span>
 			
-			                                            <input type="password" name="#" id="#" class="form-control" placeholder="PASSWORD" required="">
+			                                            <input type="password" name="pw" id="#" class="form-control" placeholder="PASSWORD" required="">
 			                                        </div>
 			                                    </div>
 			
@@ -184,9 +184,9 @@
 		                                        <button type="submit" class="form-control" style="margin-bottom: 24px;">
 		                                            로그인
 		                                        </button>
-		                                        <button type="submit" class="form-control" style="margin-bottom: 24px;">
+		                                        <a href="${cpath}/registerPage.do" class="form-control"style="margin-bottom: 24px;">
 		                                            회원가입
-		                                        </button>
+		                                       </a>
 	                                    	</div>
 			                                </div>
 	
@@ -201,7 +201,7 @@
                             <div class="row">
                                 
                                 <div class="col-lg-12 col-12">
-                                    <p class="copyright-text">Copyright © Mini Finance 2048 
+                                    <p class="copyright-text">Copyright © Campus Social Life 2023  
                                     - Design: <a rel="sponsored" href="https://www.tooplate.com" target="_blank">Tooplate</a></p>
                                 </div>
 
@@ -219,85 +219,7 @@
         <script src="js/apexcharts.min.js"></script>
         <script src="js/custom.js"></script>
 
-        <script type="text/javascript">
-            var options = {
-              series: [13, 43, 22],
-              chart: {
-              width: 380,
-              type: 'pie',
-            },
-            labels: ['Balance', 'Expense', 'Credit Loan',],
-            responsive: [{
-              breakpoint: 480,
-              options: {
-                chart: {
-                  width: 200
-                },
-                legend: {
-                  position: 'bottom'
-                }
-              }
-            }]
-            };
-
-            var chart = new ApexCharts(document.querySelector("#pie-chart"), options);
-            chart.render();
-        </script>
-
-        <script type="text/javascript">
-            var options = {
-              series: [{
-              name: 'Income',
-              data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
-            }, {
-              name: 'Expense',
-              data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
-            }, {
-              name: 'Transfer',
-              data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
-            }],
-              chart: {
-              type: 'bar',
-              height: 350
-            },
-            plotOptions: {
-              bar: {
-                horizontal: false,
-                columnWidth: '55%',
-                endingShape: 'rounded'
-              },
-            },
-            dataLabels: {
-              enabled: false
-            },
-            stroke: {
-              show: true,
-              width: 2,
-              colors: ['transparent']
-            },
-            xaxis: {
-              categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-            },
-            yaxis: {
-              title: {
-                text: '$ (thousands)'
-              }
-            },
-            fill: {
-              opacity: 1
-            },
-            tooltip: {
-              y: {
-                formatter: function (val) {
-                  return "$ " + val + " thousands"
-                }
-              }
-            }
-            };
-
-            var chart = new ApexCharts(document.querySelector("#chart"), options);
-            chart.render();
-        </script>
+       
 
     </body>
 </html>
