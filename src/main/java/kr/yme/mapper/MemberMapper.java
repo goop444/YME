@@ -9,4 +9,8 @@ import kr.yme.entity.Member;
 public interface MemberMapper {
 	
 	public void insertMember(Member vo);
+	
+	public int checkId(String id);
+	
+	public int checkNick(String nick);
 }

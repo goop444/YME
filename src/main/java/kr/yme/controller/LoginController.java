@@ -14,10 +14,6 @@ public class LoginController {
 
 	@Autowired
 	private LoginMapper mapper;
-	@RequestMapping("/loginPage.do")
-	public String LoginPage() {
-		return "view_login";
-	}
 	
 	@RequestMapping("/login.do")
 	public String Login(Member vo, HttpSession session) {
@@ -26,7 +22,7 @@ public class LoginController {
 		if (mvo != null) {
 			session.setAttribute("mvo", mvo);
 		}
-		return "redirect:/ajax.do";
+		return "redirect:/main.do";
 	}
 
 	@RequestMapping("/logout.do")
