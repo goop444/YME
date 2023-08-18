@@ -4,20 +4,25 @@
 -- 테이블 생성 SQL - t_member
 CREATE TABLE t_member
 (
-    id           VARCHAR(30)    NOT NULL    COMMENT '아이디. 아이디', 
-    pw           VARCHAR(30)    NOT NULL    COMMENT '비밀번호. 비밀번호', 
-    name         VARCHAR(40)    NOT NULL    COMMENT '이름. 이름', 
-    nick         VARCHAR(25)    NOT NULL    COMMENT '닉네임. 닉네임', 
-    phone        VARCHAR(20)    NOT NULL    COMMENT '전화번호. 전화번호', 
-    univ         VARCHAR(30)    NOT NULL    COMMENT '소속 대학교. 소속 대학교', 
-    circle_from  VARCHAR(30)    NOT NULL    COMMENT '소속 동아리. 소속 동아리', 
-    preference   TEXT           NOT NULL    COMMENT '성향분석태그. 성향분석태그', 
-    region       VARCHAR(50)    NOT NULL    COMMENT '지역. 지역', 
-    mbti         VARCHAR(20)    NOT NULL    COMMENT 'MBTI. MBTI', 
-    brithdate    DATE           NOT NULL    COMMENT '생년월일. 생년월일', 
-    created_at   DATETIME       NOT NULL    COMMENT '가입일자. 가입일자', 
+    `id`           VARCHAR(30)    NOT NULL    COMMENT '아이디. 아이디', 
+    `pw`           VARCHAR(30)    NOT NULL    COMMENT '비밀번호. 비밀번호', 
+    `name`         VARCHAR(40)    NOT NULL    COMMENT '이름. 이름', 
+    `nick`         VARCHAR(25)    NOT NULL    COMMENT '닉네임. 닉네임', 
+    `phone`        VARCHAR(20)    NOT NULL    COMMENT '전화번호. 전화번호', 
+    `univ`         VARCHAR(30)    NOT NULL    COMMENT '소속 대학교. 소속 대학교', 
+    `circle_from`  VARCHAR(30)    NOT NULL    COMMENT '소속 동아리. 소속 동아리', 
+    `preference`   TEXT           NOT NULL    COMMENT '성향분석태그. 성향분석태그', 
+    `region`       VARCHAR(50)    NOT NULL    COMMENT '지역. 지역', 
+    `mbti`         VARCHAR(20)    NOT NULL    COMMENT 'MBTI. MBTI', 
+    `brithdate`    DATE           NOT NULL    COMMENT '생년월일. 생년월일', 
+    `created_at`   DATETIME       NOT NULL    COMMENT '가입일자. 가입일자', 
      PRIMARY KEY (id)
 );
+
+select * from t_member;
+
+insert into t_member values('test01','1234','테스트','테스트','010-1111-1111','SMHRD','smhrd','#내향,#집콕','광주','ISTP','2000-05-30',now());
+insert into t_member values('test02','1234','테스트2','테스트2','010-2222-2222','SMHRD','smhrd','#외향,#집콕','담양','ESTP','1999-06-30',now());
 
 
 
@@ -29,13 +34,13 @@ ALTER TABLE t_member COMMENT '회원. 회원';
 -- 테이블 생성 SQL - t_circle
 CREATE TABLE t_circle
 (
-    circle_seq       INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '동아리 순번. 동아리 순번', 
-    circle_name      VARCHAR(60)     NOT NULL    COMMENT '동아리 명. 동아리 명', 
-    circle_logo      VARCHAR(600)    NOT NULL    COMMENT '동아리 로고. 동아리 로고', 
-    circle_univ      VARCHAR(60)     NOT NULL    COMMENT '소속 대학교. 소속 대학교', 
-    circle_at        DATE            NOT NULL    COMMENT '개설일자. 개설일자', 
-    circle_category  VARCHAR(30)     NOT NULL    COMMENT '동아리 카테고리. 동아리 카테고리', 
-    id               VARCHAR(30)     NOT NULL    COMMENT '개설자 아이디. 개설자 아이디', 
+    `circle_seq`       INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '동아리 순번. 동아리 순번', 
+    `circle_name`      VARCHAR(60)     NOT NULL    COMMENT '동아리 명. 동아리 명', 
+    `circle_logo`      VARCHAR(600)    NOT NULL    COMMENT '동아리 로고. 동아리 로고', 
+    `circle_univ`      VARCHAR(60)     NOT NULL    COMMENT '소속 대학교. 소속 대학교', 
+    `circle_at`        DATE            NOT NULL    COMMENT '개설일자. 개설일자', 
+    `circle_category`  VARCHAR(30)     NOT NULL    COMMENT '동아리 카테고리. 동아리 카테고리', 
+    `id`               VARCHAR(30)     NOT NULL    COMMENT '개설자 아이디. 개설자 아이디', 
      PRIMARY KEY (circle_seq)
 );
 
@@ -56,12 +61,12 @@ ALTER TABLE t_circle
 -- 테이블 생성 SQL - t_meeting
 CREATE TABLE t_meeting
 (
-    meeting_seq       INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '모임 순번. 모임 순번', 
-    meeting_name      VARCHAR(60)     NOT NULL    COMMENT '모임 이름. 모임 이름', 
-    meeting_at        DATE            NOT NULL    COMMENT '모임 개설일자. 모임 개설일자', 
-    meeting_period    VARCHAR(60)     NOT NULL    COMMENT '모임 기간. 모임 기간', 
-    meeting_limit     INT             NOT NULL    COMMENT '모임 인원수. 모임 인원수', 
-    meeting_category  VARCHAR(30)     NOT NULL    COMMENT '모임 카테고리. 모임 카테고리', 
+    `meeting_seq`       INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '모임 순번. 모임 순번', 
+    `meeting_name`      VARCHAR(60)     NOT NULL    COMMENT '모임 이름. 모임 이름', 
+    `meeting_at`        DATE            NOT NULL    COMMENT '모임 개설일자. 모임 개설일자', 
+    `meeting_period`    VARCHAR(60)     NOT NULL    COMMENT '모임 기간. 모임 기간', 
+    `meeting_limit`     INT             NOT NULL    COMMENT '모임 인원수. 모임 인원수', 
+    `meeting_category`  VARCHAR(30)     NOT NULL    COMMENT '모임 카테고리. 모임 카테고리', 
      PRIMARY KEY (meeting_seq)
 );
 
@@ -73,14 +78,14 @@ ALTER TABLE t_meeting COMMENT '소모임. 소모임';
 -- 테이블 생성 SQL - t_circle_chatroom
 CREATE TABLE t_circle_chatroom
 (
-    room_seq     INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '방 순번. 방 순번', 
-    room_opener  VARCHAR(30)     NOT NULL    COMMENT '방 개설자. 방 개설자', 
-    room_title   VARCHAR(600)    NOT NULL    COMMENT '방 제목. 방 제목', 
-    room_desc    TEXT            NOT NULL    COMMENT '방 소개. 방 소개', 
-    room_limit   INT             NOT NULL    COMMENT '방 인원수. 방 인원수', 
-    room_status  CHAR(1)         NOT NULL    COMMENT '방 상태. 방 상태', 
-    room_at      DATETIME        NOT NULL    COMMENT '방 개설일자. 방 개설일자', 
-    circle_seq   INT UNSIGNED    NOT NULL    COMMENT '동아리 순번. 동아리 순번', 
+    `room_seq`     INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '방 순번. 방 순번', 
+    `room_opener`  VARCHAR(30)     NOT NULL    COMMENT '방 개설자. 방 개설자', 
+    `room_title`   VARCHAR(600)    NOT NULL    COMMENT '방 제목. 방 제목', 
+    `room_desc`    TEXT            NOT NULL    COMMENT '방 소개. 방 소개', 
+    `room_limit`   INT             NOT NULL    COMMENT '방 인원수. 방 인원수', 
+    `room_status`  CHAR(1)         NOT NULL    COMMENT '방 상태. 방 상태', 
+    `room_at`      DATETIME        NOT NULL    COMMENT '방 개설일자. 방 개설일자', 
+    `circle_seq`   INT UNSIGNED    NOT NULL    COMMENT '동아리 순번. 동아리 순번', 
      PRIMARY KEY (room_seq)
 );
 
@@ -101,14 +106,14 @@ ALTER TABLE t_circle_chatroom
 -- 테이블 생성 SQL - t_meeting_chatroom
 CREATE TABLE t_meeting_chatroom
 (
-    room_seq     INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '방 순번. 방 순번', 
-    room_opener  VARCHAR(30)     NOT NULL    COMMENT '방 개설자. 방 개설자', 
-    room_title   VARCHAR(600)    NOT NULL    COMMENT '방 제목. 방 제목', 
-    room_desc    TEXT            NOT NULL    COMMENT '방 소개. 방 소개', 
-    room_limit   INT             NOT NULL    COMMENT '방 인원수. 방 인원수', 
-    room_status  CHAR(1)         NOT NULL    COMMENT '방 상태. 방 상태', 
-    room_at      DATETIME        NOT NULL    COMMENT '방 개설일자. 방 개설일자', 
-    meeting_seq  INT UNSIGNED    NOT NULL    COMMENT '모임 순번. 모임 순번', 
+    `room_seq`     INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '방 순번. 방 순번', 
+    `room_opener`  VARCHAR(30)     NOT NULL    COMMENT '방 개설자. 방 개설자', 
+    `room_title`   VARCHAR(600)    NOT NULL    COMMENT '방 제목. 방 제목', 
+    `room_desc`    TEXT            NOT NULL    COMMENT '방 소개. 방 소개', 
+    `room_limit`   INT             NOT NULL    COMMENT '방 인원수. 방 인원수', 
+    `room_status`  CHAR(1)         NOT NULL    COMMENT '방 상태. 방 상태', 
+    `room_at`      DATETIME        NOT NULL    COMMENT '방 개설일자. 방 개설일자', 
+    `meeting_seq`  INT UNSIGNED    NOT NULL    COMMENT '모임 순번. 모임 순번', 
      PRIMARY KEY (room_seq)
 );
 
@@ -129,12 +134,12 @@ ALTER TABLE t_meeting_chatroom
 -- 테이블 생성 SQL - t_tendency
 CREATE TABLE t_tendency
 (
-    tendency_seq    INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '분석 순번. 분석 순번', 
-    id              VARCHAR(30)     NOT NULL    COMMENT '회원 아이디. 회원 아이디', 
-    question        TEXT            NOT NULL    COMMENT '질문번호. 질문번호', 
-    answer          TEXT            NOT NULL    COMMENT '답변내용. 답변내용', 
-    answer_at       DATETIME        NOT NULL    COMMENT '답변시간. 답변시간', 
-    question_order  INT             NULL        COMMENT '질문순번. 질문순번', 
+    `tendency_seq`    INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '분석 순번. 분석 순번', 
+    `id`              VARCHAR(30)     NOT NULL    COMMENT '회원 아이디. 회원 아이디', 
+    `question`        TEXT            NOT NULL    COMMENT '질문번호. 질문번호', 
+    `answer`          TEXT            NOT NULL    COMMENT '답변내용. 답변내용', 
+    `answer_at`       DATETIME        NOT NULL    COMMENT '답변시간. 답변시간', 
+    `question_order`  INT             NULL        COMMENT '질문순번. 질문순번', 
      PRIMARY KEY (tendency_seq)
 );
 
@@ -155,10 +160,10 @@ ALTER TABLE t_tendency
 -- 테이블 생성 SQL - t_meeting_join
 CREATE TABLE t_meeting_join
 (
-    join_seq     INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '가입 순번. 가입 순번', 
-    meeting_seq  INT UNSIGNED    NOT NULL    COMMENT '모임 순번. 모임 순번', 
-    id           VARCHAR(30)     NOT NULL    COMMENT '회원 아이디. 회원 아이디', 
-    joined_at    DATETIME        NOT NULL    COMMENT '가입 일자. 가입 일자', 
+    `join_seq`     INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '가입 순번. 가입 순번', 
+    `meeting_seq`  INT UNSIGNED    NOT NULL    COMMENT '모임 순번. 모임 순번', 
+    `id`           VARCHAR(30)     NOT NULL    COMMENT '회원 아이디. 회원 아이디', 
+    `joined_at`    DATETIME        NOT NULL    COMMENT '가입 일자. 가입 일자', 
      PRIMARY KEY (join_seq)
 );
 
@@ -188,12 +193,12 @@ ALTER TABLE t_meeting_join
 -- 테이블 생성 SQL - t_circle_talk
 CREATE TABLE t_circle_talk
 (
-    talk_seq  INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '채팅 순번. 채팅 순번', 
-    talker    VARCHAR(30)     NOT NULL    COMMENT '발화자. 발화자', 
-    talk      TEXT            NULL        COMMENT '발화내용. 발화내용', 
-    emoticon  VARCHAR(600)    NULL        COMMENT '이모티콘. 이모티콘', 
-    talk_at   DATETIME        NOT NULL    COMMENT '발화시간. 발화시간', 
-    room_seq  INT UNSIGNED    NOT NULL    COMMENT '방 순번. 방 순번', 
+    `talk_seq`  INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '채팅 순번. 채팅 순번', 
+    `talker`    VARCHAR(30)     NOT NULL    COMMENT '발화자. 발화자', 
+    `talk`      TEXT            NULL        COMMENT '발화내용. 발화내용', 
+    `emoticon`  VARCHAR(600)    NULL        COMMENT '이모티콘. 이모티콘', 
+    `talk_at`   DATETIME        NOT NULL    COMMENT '발화시간. 발화시간', 
+    `room_seq`  INT UNSIGNED    NOT NULL    COMMENT '방 순번. 방 순번', 
      PRIMARY KEY (talk_seq)
 );
 
@@ -214,10 +219,10 @@ ALTER TABLE t_circle_talk
 -- 테이블 생성 SQL - t_circle_join
 CREATE TABLE t_circle_join
 (
-     join_seq     INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '가입 순번. 가입 순번', 
-     circle_seq   INT UNSIGNED    NOT NULL    COMMENT '동아리 순번. 동아리 순번', 
-     id           VARCHAR(30)     NOT NULL    COMMENT '회원 아이디. 회원 아이디', 
-     joined_at    DATETIME        NOT NULL    COMMENT '가입 일자. 가입 일자', 
+    `join_seq`    INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '가입 순번. 가입 순번', 
+    `circle_seq`  INT UNSIGNED    NOT NULL    COMMENT '동아리 순번. 동아리 순번', 
+    `id`          VARCHAR(30)     NOT NULL    COMMENT '회원 아이디. 회원 아이디', 
+    `joined_at`   DATETIME        NOT NULL    COMMENT '가입 일자. 가입 일자', 
      PRIMARY KEY (join_seq)
 );
 
@@ -247,12 +252,12 @@ ALTER TABLE t_circle_join
 -- 테이블 생성 SQL - t_meeting_talk
 CREATE TABLE t_meeting_talk
 (
-     talk_seq   INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '채팅 순번. 채팅 순번', 
-     talker     VARCHAR(30)     NOT NULL    COMMENT '발화자. 발화자', 
-     talk       TEXT            NULL        COMMENT '발화내용. 발화내용', 
-     emoticon   VARCHAR(600)    NULL        COMMENT '이모티콘. 이모티콘', 
-     talk_at    DATETIME        NOT NULL    COMMENT '발화시간. 발화시간', 
-     room_seq   INT UNSIGNED    NOT NULL    COMMENT '방 순번. 방 순번', 
+    `talk_seq`  INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '채팅 순번. 채팅 순번', 
+    `talker`    VARCHAR(30)     NOT NULL    COMMENT '발화자. 발화자', 
+    `talk`      TEXT            NULL        COMMENT '발화내용. 발화내용', 
+    `emoticon`  VARCHAR(600)    NULL        COMMENT '이모티콘. 이모티콘', 
+    `talk_at`   DATETIME        NOT NULL    COMMENT '발화시간. 발화시간', 
+    `room_seq`  INT UNSIGNED    NOT NULL    COMMENT '방 순번. 방 순번', 
      PRIMARY KEY (talk_seq)
 );
 

@@ -25,21 +25,18 @@ public class IndexController {
 		return "main";
 	}
 	
+	
+	@RequestMapping("/circle_board.do")
+	public String goCboard() {
+		return "view_circleBoard";
+	}
 	@RequestMapping("/mtest.do")
 	public String chart() {
 		
 		return "view_friendSearch";
 	}
 	
-	@RequestMapping("/pTest.do")
-	public String test() {
-		return "pythonTest";
-	}
-	/*
-	 * @PostMapping("/register.do") public String register(Member vo) {
-	 * mapper.insertMember(vo);
-	 * 
-	 * return "test"; }
-	 */
+
+
 
 }

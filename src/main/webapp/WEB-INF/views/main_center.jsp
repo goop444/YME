@@ -4,47 +4,44 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-<div class="title-group mb-3" style="text-align: center;">
-	<h1 class="h2 mb-0">{user_school} {user_name}님,</h1>
+<div class="title-group mb-4" style="text-align: center;">
+	<small class="text-muted">Welcome!</small>
+	<h1 class="h2 mb-0">10-Minutes</h1>
 
-	<small class="text-muted">어서오세요!</small>
 </div>
 <div class="col-lg-5 col-12" style="width: 100%;">
+<div
+		class="custom-block custom-block-profile-front custom-block-profile text-center bg-white banner"
+		style="padding: 0;">
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  		<div class="carousel-inner">
+    		<div class="carousel-item active" data-bs-interval="5000">
+      			<img src="./resources/images/banner/animal_banner.png" class="d-block w-100" alt="...">
+    		</div>
+    		<div class="carousel-item" data-bs-interval="5000">
+      			<img src="./resources/images/banner/preference.png" class="d-block w-100" alt="...">
+    		</div>
+  		</div>
+	</div>
+	</div> 
+	
+
 	<div
 		class="custom-block custom-block-profile-front custom-block-profile text-center bg-white">
-		<div class="custom-block-profile-image-wrap mb-4">
-			<img src="./resources/images/medium-shot-happy-man-smiling.jpg"
-				class="custom-block-profile-image img-fluid" alt=""> <a
-				href="setting.html" class="bi-pencil-square custom-block-edit-icon"></a>
+		<div style="float: left; margin-right: 10%; margin-left: 8%">
+			<canvas id="polar-chart" width="400" height="225"></canvas>
 		</div>
-		<div class="custom-block custom-block-bottom d-flex flex-wrap"
-			style="margin-bottom: 0px;">
-			<div class="custom-block-bottom-item">
-				<a href="#" class="d-flex flex-column"> <i
-					class="custom-block-icon bi-wallet"></i> <small>내 동아리</small>
-				</a>
-			</div>
 
-			<div class="custom-block-bottom-item">
-				<a href="#" class="d-flex flex-column"> <i
-					class="custom-block-icon bi-upc-scan"></i> <small>내 모임</small>
-				</a>
-			</div>
-
-			<div class="custom-block-bottom-item">
-				<a href="#" class="d-flex flex-column"> <i
-					class="custom-block-icon bi-send"></i> <small>채팅방</small>
-				</a>
-			</div>
+		<div style="float: left">
+			<canvas id="radar-chart" width="400" height="225"></canvas>
 		</div>
 	</div>
 	<div
 		class="custom-block custom-block-profile-front custom-block-profile text-center bg-white">
 
 		<div class="title-group mb-3" style="text-align: left;">
-			<h1 class="h5 mb-0">교내 추천 동아리</h1>
-			<small class="text-muted">10minutes이 추천하는 {user_school}의
-				동아리에요</small>
+			<h1 class="h5 mb-0">추천 동아리</h1>
+			<small class="text-muted">10-Minutes이 추천하는 동아리에요</small>
 		</div>
 		<div class="job-thumb d-flex" style="padding: 10px 25px 0px 25px;">
 			<div class="job-image-wrap bg-white shadow-lg">
@@ -58,16 +55,16 @@
 				<div class="mb-3">
 					<p class="job-title mb-lg-0"
 						style="text-align: left; font-size: 13px;">
-						<a href="#" class="job-title-link">{성향}</a>
+						<a href="#" class="job-title-link">#공연</a>
 					</p>
 					<h4 class="job-title mb-lg-0">
-						<a href="#" class="job-title-link">{circleName}</a>
+						<a href="#" class="job-title-link">어쿠스틱</a>
 					</h4>
 
 					<div class="d-flex flex-wrap align-items-center"
 						style="margin-top: 5px; text-align: left;">
 						<p class="job-location mb-0" style="font-size: 13px;">
-							<i class="custom-icon bi-geo-alt me-1"></i> {user_school}
+							<i class="custom-icon bi-geo-alt me-1"></i> 조선대학교
 						</p>
 
 					</div>
@@ -76,8 +73,8 @@
 		</div>
 		<div class="job-thumb d-flex" style="padding: 10px 25px 0px 25px;">
 			<div class="job-image-wrap bg-white shadow-lg">
-				<img src="./resources/images/circleMark.jpeg"
-					class="job-image img-fluid" alt="">
+				<img src="./resources/images/m_d.jpg" class="job-image img-fluid"
+					alt="">
 			</div>
 
 			<div
@@ -86,16 +83,16 @@
 				<div class="mb-3">
 					<p class="job-title mb-lg-0"
 						style="text-align: left; font-size: 13px;">
-						<a href="#" class="job-title-link">{성향}</a>
+						<a href="#" class="job-title-link">#공연</a>
 					</p>
 					<h4 class="job-title mb-lg-0">
-						<a href="#" class="job-title-link">{circleName}</a>
+						<a href="#" class="job-title-link">모비딕스</a>
 					</h4>
 
 					<div class="d-flex flex-wrap align-items-center"
 						style="margin-top: 5px; text-align: left;">
 						<p class="job-location mb-0" style="font-size: 13px;">
-							<i class="custom-icon bi-geo-alt me-1"></i> {user_school}
+							<i class="custom-icon bi-geo-alt me-1"></i> 부경대학교
 						</p>
 
 					</div>
@@ -104,8 +101,8 @@
 		</div>
 		<div class="job-thumb d-flex" style="padding: 10px 25px 0px 25px;">
 			<div class="job-image-wrap bg-white shadow-lg">
-				<img src="./resources/images/circleMark.jpeg"
-					class="job-image img-fluid" alt="">
+				<img src="./resources/images/tg.png" class="job-image img-fluid"
+					alt="" style="height: 80px">
 			</div>
 
 			<div
@@ -114,16 +111,16 @@
 				<div class="mb-3">
 					<p class="job-title mb-lg-0"
 						style="text-align: left; font-size: 13px;">
-						<a href="#" class="job-title-link">{성향}</a>
+						<a href="#" class="job-title-link">#체육/레저</a>
 					</p>
 					<h4 class="job-title mb-lg-0">
-						<a href="#" class="job-title-link">{circleName}</a>
+						<a href="#" class="job-title-link">금호태극회</a>
 					</h4>
 
 					<div class="d-flex flex-wrap align-items-center"
 						style="margin-top: 5px; text-align: left;">
 						<p class="job-location mb-0" style="font-size: 13px;">
-							<i class="custom-icon bi-geo-alt me-1"></i> {user_school}
+							<i class="custom-icon bi-geo-alt me-1"></i> 금호공과대학교
 						</p>
 
 					</div>
@@ -146,10 +143,10 @@
 				</div>
 				<div style="display: flex; flex-direction: column;">
 					<div class="rank_uname"
-						style="color: #717275; font-weight: 400; font-size: 12px; line-height: 11px; padding-top: 5px;">부경대학교</div>
+						style="color: #717275; font-weight: 400; font-size: 12px; line-height: 11px; padding-top: 5px;">조선대학교</div>
 					<div
 						style="display: flex; flex-direction: row; align-items: center;">
-						<div class="rank_cname" style="font-weight: 700; font-size: 17px;">모비딕스</div>
+						<div class="rank_cname" style="font-weight: 700; font-size: 17px;">어쿠스틱</div>
 					</div>
 				</div>
 				<div class="image-wrapper">
@@ -171,8 +168,8 @@
 					</div>
 				</div>
 				<div class="image-wrapper">
-					<img src="./resources/images/circleMark.jpeg" class="img-fluid"
-						alt="" style="width: auto;">
+					<img src="./resources/images/m_d.jpg" class="img-fluid" alt=""
+						style="width: auto;">
 				</div>
 			</div>
 			<div class="nav-item featured-box mt-lg-5 mt-4 mb-4"
@@ -182,17 +179,18 @@
 				</div>
 				<div style="display: flex; flex-direction: column;">
 					<div class="rank_uname"
-						style="color: #717275; font-weight: 400; font-size: 12px; line-height: 11px; padding-top: 5px;">부경대학교</div>
+						style="color: #717275; font-weight: 400; font-size: 12px; line-height: 11px; padding-top: 5px;">금오공과대학교</div>
 					<div
 						style="display: flex; flex-direction: row; align-items: center;">
-						<div class="rank_cname" style="font-weight: 700; font-size: 17px;">모비딕스</div>
+						<div class="rank_cname" style="font-weight: 700; font-size: 17px;">금오태극회</div>
 					</div>
 				</div>
 				<div class="image-wrapper">
-					<img src="./resources/images/circleMark.jpeg" class="img-fluid"
-						alt="" style="width: auto;">
+					<img src="./resources/images/tg.png" class="img-fluid" alt=""
+						style="width: auto;">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+

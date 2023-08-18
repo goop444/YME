@@ -18,5 +18,7 @@ public class Member {
 	private String mbti;
 	private String birthdate;
 	private Date created_at;
+	private String u_name;
+	private String r_name;
 	
 }

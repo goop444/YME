@@ -11,7 +11,7 @@ https://www.tooplate.com/view/2135-mini-finance
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #E63946;
+  --section-bg-color:                #E63946;
   --secondary-color:              #F1FAEE;
   --section-bg-color:             #ececec;
   --primary-bg-color:             #E63946;
@@ -116,12 +116,12 @@ button {
 
 a {
   display: inline-block;
-  color: var(--primary-color);
+  color: var(#A8DADC);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  color: #A8DADC;
 }
 
 b,
@@ -200,8 +200,8 @@ strong {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-link:focus, 
 .nav-tabs .nav-link:hover {
-  border-bottom-color: var(--primary-color);
-  color: var(--primary-color);
+  border-bottom-color: #A8DADC;
+  color: var(#A8DADC);
 }
 
 
@@ -291,8 +291,8 @@ strong {
 }
 
 .dropdown .dropdown-menu-social .dropdown-item:hover {
-  background: var(--section-bg-color);
-  color: var(--p-color);
+  background: #A8DADC;
+  color: white;
 }
 
 
@@ -322,7 +322,7 @@ strong {
 
 .dropdown .notifications-block .dropdown-item:hover {
   background: transparent;
-  color: var(--dark-color);
+  color: white;
 }
 
 .notifications-icon-wrap {
@@ -358,7 +358,7 @@ strong {
 }
 
 .custom-btn:hover {
-  background: var(--custom-btn-bg-hover-color);
+  background: #A8DADC;
   color: var(--white-color);
 }
 
@@ -456,7 +456,7 @@ strong {
 }
 
 .dropdown .dropdown-item:hover {
-  background: var(--primary-color);
+  background: #A8DADC;
   color: var(--white-color);
 }
 
@@ -486,12 +486,12 @@ strong {
 
 #sidebarMenu .nav-link.active, 
 #sidebarMenu .nav-link:hover {
-  background: var(--primary-color);
+  background: #A8DADC;
   color: var(--white-color);
 }
 
 .navbar-toggler {
-  background: var(--primary-color);
+  background: var(#A8DADC);
   border-radius: var(--border-radius-small);
   position: fixed;
   top: 0;
@@ -598,7 +598,7 @@ strong {
 
 .custom-block-balance::after {
   content: "";
-  background: var(--primary-color);
+  background: var(#A8DADC);
   background: #ffa500;
   border-radius: 100%;
   width: 180px;
@@ -610,7 +610,7 @@ strong {
 }
 
 .custom-block-edit-icon {
-  background: var(--primary-color);
+  background: var(#A8DADC);
   border-radius: var(--border-radius-large);
   color: var(--white-color);
   width: 35px;
@@ -693,7 +693,7 @@ strong {
 }
 
 .custom-block-image {
-  border: 10px solid var(--primary-color);
+  border: 10px solid var(#A8DADC);
   border-radius: 100%;
   position: absolute;
   top: -60px;
@@ -744,7 +744,7 @@ strong {
 }
 
 .custom-block-transations p a:hover {
-  color: var(--primary-color);
+  color: var(#A8DADC);
 }
 
 .custom-block-transation-detail h6,
@@ -779,7 +779,7 @@ strong {
 }
 
 .custom-block-profile p a:hover {
-  color: var(--primary-color);
+  color: var(#A8DADC);
 }
 
 .custom-block-profile strong {
@@ -1156,7 +1156,7 @@ strong {
 }
 
 .job-listings-page .hero-form .badge:hover {
-  background: var(--primary-color);
+  background: var(#A8DADC);
 }
 
 .job-thumb {
@@ -1308,7 +1308,7 @@ strong {
 }
 
 .hero-section .section-overlay {
-  background: var(--primary-color);
+  background: var(#A8DADC);
 }
 
 .hero-section .custom-border-btn {
@@ -1375,7 +1375,7 @@ strong {
 
 .hero-section .badge:hover {
   background: var(--white-color);
-  color: var(--primary-color);
+  color: var(#A8DADC);
 }
 
 .badge {
@@ -1392,7 +1392,7 @@ strong {
 }
 
 .badge-level {
-  background: var(--primary-color);
+  background: var(#A8DADC);
   color: var(--white-color);
 }
 
@@ -1448,7 +1448,7 @@ strong {
 }
 
 .sorting-icon.active {
-  color: var(--primary-color);
+  color: var(#A8DADC);
 }
 
 .job-section-btn-wrap {
@@ -2850,3 +2850,28 @@ padding-top:10px;
 	text-align:right
 	}
 
+.research-icon{
+	display: inline-grid;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    align-items: center;
+    font-size: 13px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.research-icon:hover{
+	background-color: var(--custom-btn-bg-color);
+	color: white;
+}
+
+.progress::-webkit-progress-value {
+        background-color: var(--custom-btn-bg-color); /* 진행 부분의 색상 */
+    }
+    
+.research-icon.selected {
+        background-color: var(--custom-btn-bg-color); /* 선택된 아이콘의 배경색 */
+        color: white;
+    }

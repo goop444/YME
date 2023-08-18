@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,11 +19,13 @@ public class PythonControlloer {
 	
 	
 	@RequestMapping(value = "/pythonTest.do", method = RequestMethod.GET)
-	public ModelAndView Test() {
+	public ModelAndView Test(String id) {
 		ModelAndView mav = new ModelAndView();
 		
 		String url = "http://127.0.0.1:80/tospring";
 		String sb = "";
+		
+		
 		try {
 			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 			
@@ -51,7 +54,7 @@ public class PythonControlloer {
 		mav.addObject("test1", sb.toString()); // "test1"는 jsp파일에서 받을때 이름, 
         						//sb.toString은 value값(여기에선 test)
 		mav.addObject("fail", false);
-		mav.setViewName("pythonTest");   // jsp파일 이름
+		mav.setViewName("test");   // jsp파일 이름
 		return mav;
 }
 }

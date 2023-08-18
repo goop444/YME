@@ -66,8 +66,8 @@
 	height: 40px;
 	border: 1px solid #EBEBEB;
 	border-radius: 30px;
-	background: url(.\resources\images\angle_down_black.svg) no-repeat 95%
-		50%/15px auto;
+	background: url(.\resources\images\angle_right.svg) no-repeat 95% 50%/15px
+		auto;
 }
 
 .select_name {
@@ -145,8 +145,8 @@
 <body>
 	<header class="navbar sticky-top flex-md-nowrap">
 		<div class="col-md-3 col-lg-3 me-0 px-3 fs-6">
-			<a class="navbar-brand" href="index.html"> <i class="bi-box"></i>
-				10-minutes
+			<a class="navbar-brand" href="${cpath}/main.do"> <img
+				src=".\resources\images\mainLogo.png" style="width: 10%;">&nbsp;10-Minutes
 			</a>
 		</div>
 
@@ -163,106 +163,135 @@
 			<input class="form-control" name="search" type="text"
 				placeholder="Search" aria-label="Search">
 		</form>
+		<!-- 비회원 로그인바 -->
+		<c:if test="${empty mvo}">
+			<div class="dropdown px-3">
+				<a class="nav-link dropdown-toggle" href="#" role="button"
+					data-bs-toggle="dropdown" aria-expanded="false" style="width: 115px;font-style: italic">Login/Join</a>
+				
+				<ul class="dropdown-menu bg-white shadow">
+					<form action="${cpath }/login_any.do" method="post">
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" name="id" id="id"
+								placeholder="ID" style="border-color: #A8DADC;border-style: solid;"><label
+								for="id">ID</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="password" class=" form-control" name="pw" id="pw"
+								placeholder="Password" style="border-color: #A8DADC;border-style: solid;"> <label
+								for="pw">Password</label>
+						</div>
+						<li class="border-top mt-3 pt-2 mx-4"><button type="submit" class="dropdown-item ms-0 me-0"><i
+								class="bi-box-arrow-right me-2" ></i> 로그인</button> 
+								<button type="button" class="dropdown-item ms-0 me-0" onclick="joinPage()"><i
+								class="bi-box-arrow-right me-2"></i> 회원가입</button> </li>
+					</form>
+				</ul>
+			</div>
+		</c:if>
 
-		<div class="navbar-nav me-lg-2 ">
-			<div class="nav-item text-nowrap d-flex align-items-center">
-				<div class="dropdown ps-3">
-					<a class="nav-link dropdown-toggle text-center" href="#"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false"
-						id="navbarLightDropdownMenuLink"> <i class="bi-bell"></i> <span
-						class="position-absolute start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
-							<span class="visually-hidden">New alerts</span>
-					</span>
-					</a>
+		<!-- 회원 로그인바 -->
+		<c:if test="${!empty mvo}">
+			<div class="navbar-nav me-lg-2">
+				<div class="nav-item text-nowrap d-flex align-items-center">
+					<div class="dropdown ps-3">
+						<a class="nav-link dropdown-toggle text-center" href="#"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false"
+							id="navbarLightDropdownMenuLink"> <i class="bi-bell"></i> <span
+							class="position-absolute start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+								<span class="visually-hidden">New alerts</span>
+						</span>
+						</a>
 
-					<ul
-						class="dropdown-menu dropdown-menu-lg-end notifications-block-wrap bg-white shadow"
-						aria-labelledby="navbarLightDropdownMenuLink">
-						<small>Notifications</small>
+						<ul
+							class="dropdown-menu dropdown-menu-lg-end notifications-block-wrap bg-white shadow"
+							aria-labelledby="navbarLightDropdownMenuLink">
+							<small>Notifications</small>
 
-						<li class="notifications-block border-bottom pb-2 mb-2"><a
-							class="dropdown-item d-flex  align-items-center" href="#">
-								<div class="notifications-icon-wrap bg-success">
-									<i class="notifications-icon bi-check-circle-fill"></i>
+							<li class="notifications-block border-bottom pb-2 mb-2"><a
+								class="dropdown-item d-flex  align-items-center" href="#">
+									<div class="notifications-icon-wrap bg-success">
+										<i class="notifications-icon bi-check-circle-fill"></i>
+									</div>
+
+									<div>
+										<span>Your account has been created successfuly.</span>
+
+										<p>12 days ago</p>
+									</div>
+							</a></li>
+
+							<li class="notifications-block border-bottom pb-2 mb-2"><a
+								class="dropdown-item d-flex align-items-center" href="#">
+									<div class="notifications-icon-wrap bg-info">
+										<i class="notifications-icon bi-folder"></i>
+									</div>
+
+									<div>
+										<span>Please check. We have sent a Daily report.</span>
+
+										<p>10 days ago</p>
+									</div>
+							</a></li>
+
+							<li class="notifications-block"><a
+								class="dropdown-item d-flex align-items-center" href="#">
+									<div class="notifications-icon-wrap bg-danger">
+										<i class="notifications-icon bi-question-circle"></i>
+									</div>
+
+									<div>
+										<span>Account verification failed.</span>
+
+										<p>1 hour ago</p>
+									</div>
+							</a></li>
+						</ul>
+					</div>
+
+					<div class="dropdown px-3">
+						<a class="nav-link dropdown-toggle" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false"> <img
+							src="./resources/images/medium-shot-happy-man-smiling.jpg"
+							class="profile-image img-fluid" alt="">
+						</a>
+						<ul class="dropdown-menu bg-white shadow">
+							<li>
+								<div class="dropdown-menu-profile-thumb d-flex">
+									<img src="./resources/images/medium-shot-happy-man-smiling.jpg"
+										class="profile-image img-fluid me-3" alt="">
+
+									<div class="d-flex flex-column">
+										<small>Thomas</small> <a href="#">thomas@site.com</a>
+									</div>
 								</div>
+							</li>
 
-								<div>
-									<span>Your account has been created successfuly.</span>
+							<li><a class="dropdown-item" href="profile.html"> <i
+									class="bi-person me-2"></i> Profile
+							</a></li>
 
-									<p>12 days ago</p>
-								</div>
-						</a></li>
+							<li><a class="dropdown-item" href="setting.html"> <i
+									class="bi-gear me-2"></i> Settings
+							</a></li>
 
-						<li class="notifications-block border-bottom pb-2 mb-2"><a
-							class="dropdown-item d-flex align-items-center" href="#">
-								<div class="notifications-icon-wrap bg-info">
-									<i class="notifications-icon bi-folder"></i>
-								</div>
+							<li><a class="dropdown-item" href="help-center.html"> <i
+									class="bi-question-circle me-2"></i> Help
+							</a></li>
 
-								<div>
-									<span>Please check. We have sent a Daily report.</span>
-
-									<p>10 days ago</p>
-								</div>
-						</a></li>
-
-						<li class="notifications-block"><a
-							class="dropdown-item d-flex align-items-center" href="#">
-								<div class="notifications-icon-wrap bg-danger">
-									<i class="notifications-icon bi-question-circle"></i>
-								</div>
-
-								<div>
-									<span>Account verification failed.</span>
-
-									<p>1 hour ago</p>
-								</div>
-						</a></li>
-					</ul>
-				</div>
-
-				<div class="dropdown px-3">
-					<a class="nav-link dropdown-toggle" href="#" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> <img
-						src="./resources/images/medium-shot-happy-man-smiling.jpg"
-						class="profile-image img-fluid" alt="">
-					</a>
-					<ul class="dropdown-menu bg-white shadow">
-						<li>
-							<div class="dropdown-menu-profile-thumb d-flex">
-								<img src="./resources/images/medium-shot-happy-man-smiling.jpg"
-									class="profile-image img-fluid me-3" alt="">
-
-								<div class="d-flex flex-column">
-									<small>Thomas</small> <a href="#">thomas@site.com</a>
-								</div>
-							</div>
-						</li>
-
-						<li><a class="dropdown-item" href="profile.html"> <i
-								class="bi-person me-2"></i> Profile
-						</a></li>
-
-						<li><a class="dropdown-item" href="setting.html"> <i
-								class="bi-gear me-2"></i> Settings
-						</a></li>
-
-						<li><a class="dropdown-item" href="help-center.html"> <i
-								class="bi-question-circle me-2"></i> Help
-						</a></li>
-
-						<li class="border-top mt-3 pt-2 mx-4"><a
-							class="dropdown-item ms-0 me-0" href="#"> <i
-								class="bi-box-arrow-left me-2"></i> Logout
-						</a></li>
-					</ul>
+							<li class="border-top mt-3 pt-2 mx-4"><a
+								class="dropdown-item ms-0 me-0" href="#"> <i
+									class="bi-box-arrow-left me-2"></i> Logout
+							</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
+		</c:if>
 	</header>
 	<div class="container-fluid">
 		<div class="row">
-			<nav id="sidebarMenu"
+				<nav id="sidebarMenu"
 				class="col-md-3 col-lg-3 d-md-block sidebar collapse">
 				<div class="position-sticky py-4 px-3 sidebar-sticky">
 					<ul class="nav flex-column h-100">
@@ -282,15 +311,15 @@
 						<li class="nav-item"><a class="nav-link" href="setting.html">
 								<i class="bi-gear me-2"></i> 내 정보
 						</a></li>
-
-						<li class="nav-item border-top mt-auto pt-2"><a
-							class="nav-link" href="#"> <i class="bi-box-arrow-left me-2"></i>
-								Logout
-						</a></li>
+						<c:if test="${!empty mvo}">
+							<li class="nav-item border-top mt-auto pt-2"><a
+								class="nav-link" href="${cpath}/logout.do"> <i class="bi-box-arrow-left me-2"></i>
+									Logout
+							</a></li>
+						</c:if>
 					</ul>
 				</div>
 			</nav>
-
 			<main
 				class="main-wrapper col-md-9 ms-sm-auto py-4 col-lg-9 px-md-4 border-start">
 				<div
@@ -301,70 +330,87 @@
 						<div
 							style="display: flex; justify-content: center; align-items: center;">
 							<img onclick="goback_reg()"
-								src=".\resources\images\angle_left_new.svg"
-								style="position: absolute; left: -1px;"> 게시글 등록
+								src=".\resources\images\angle_right.svg"
+								style="position: absolute; left: -1px;">게시글 등록
 						</div>
 					</div>
 					<div class="page-content header-clear" style="height: auto;">
 						<div class="content bottom-0"
 							style="height: calc(100% - 60px); overflow: scroll; padding-top: 15px;">
+
 							<div class="contact-form">
-								<form action="/web/board/reg" id="form" method="post"
-									enctype="multipart/form-data" class="contactForm">
+
+
+
+								<form action="${cpath}/c_register.do" id="frm" method="post">
+
 
 									<div class="input_place">
 										<div class="vote_select select_wrap"
 											style="width: 100%; border-radius: 10px; height: 50px;">
-											<select class="select_name" id="board_tag" name="board_tag"
+											<select class="select_name" id="board_tag" name="board_type"
 												style="width: 100%; color: #999999; -webkit-appearance: none; height: 100%; border: none;"
 												onchange="change_board_tag(this)">
 												<option value="" selected>게시판 유형을 선택해 주세요</option>
-												<option value="1">자유 게시판</option>
-												<option value="2">앨범 게시판</option>
+												<option value="X">자유 게시판</option>
+												<option value="O">앨범 게시판</option>
 											</select>
-										</div>
-									</div>
-
-									<div class="input_place" id="image_upload"
-										style="border-radius: 5px !important; display: flex; flex-direction: row;">
-										<div class="add-btn subtitle_name" id="btn-upload"
-											type="button" style="margin: 0 auto;">
-											<img src="./resources/images/gallery.svg">사진 첨부
-										</div>
-										<div class="preview-container" style="margin: 0 auto; max-height: 400px;">
-											<!-- 이미지 미리보기가 여기에 표시됩니다. -->
 										</div>
 									</div>
 
 
 									<div class="input_place">
-										<input type="text" name="title" id="title" value=""
+										<input type="text" name="board_title" id="title" value=""
 											placeholder="제목을 입력해주세요." class="input_title">
 									</div>
 
 									<div class="input_place"
 										style="border-radius: 5px !important; background: #F5F5F5 !important; display: flex; flex-direction: row;">
-										<textarea name="content" class="input_content"
+										<textarea name="board_content" class="input_content"
 											placeholder="내용을 입력해주세요." id="content"
 											style="margin-top: 0px; height: 300px; border-radius: 5px !important;"></textarea>
 									</div>
 
+									
+<!-- 								<input type="hidden" id="route" name="board_img" value="">
+									
+									<div class="submit_btn"
+										style="display: flex; position: relative;" id="add">
+										<div class="footer_btn 7_a_btn btn_title w-30 none"
+											onclick="history.back()"
+											style="background: #EBEBEB; color: #222222;">이전</div>
+										<button type="button"
+											class="footer_btn 7_b_btn btn_title w-70 write_check none" onclick="submitfrm()">게시글
+											등록</button>
+									</div> -->
+									
+									<!-- HTML form 내부에 파일 입력 필드를 추가 -->
+									<div class="input-group" style="display:none">
+									<input type="file" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" name="board_img" style="padding-right:36%; width:48%;margin-right:52%; margin-bottom:1%" />
+									</div>
+									
+									<!-- 서버로 실제 파일 이름을 전송하기 위한 숨겨진 필드 -->
+									<input type="hidden" id="hidden-file-name" name="fileName" />
+								
+									
+									<div class="submit_btn"
+										style="display: flex; position: relative;" id="add">
+										<div class="footer_btn 7_a_btn btn_title w-30 none"
+											onclick="history.back()"
+											style="background: #EBEBEB; color: #222222;">이전</div>
+										<button type="button"
+											class="footer_btn 7_b_btn btn_title w-70 write_check none" onclick="submitfrm()">게시글
+											등록</button>
+									</div>
+									
 
-									<input type="hidden" name="board_category_id" value="10001725">
-									<input id="tag" name="tag" type="hidden" value="macam_free">
-									<input id="club_id" name="club_id" type="hidden" value="">
-									<input id="rate" name="rate" type="hidden" value=""> <input
-										type="hidden" id="check_vote" name="check_vote" value="0">
 								</form>
+
 							</div>
+
 						</div>
-						<div class="submit_btn" style="display: flex; position: relative;">
-							<div class="footer_btn 7_a_btn btn_title w-30 none"
-								onclick="history.back()"
-								style="background: #EBEBEB; color: #222222;">이전</div>
-							<div class="footer_btn 7_b_btn btn_title w-70 write_check none"
-								onclick="chk_params()" style="">게시글 등록</div>
-						</div>
+
+
 					</div>
 				</div>
 
@@ -386,75 +432,45 @@
 
 		</div>
 	</div>
-	<!-- 사진 업로드 스크립트 -->
+
+
+	<!-- JAVASCRIPT FILES -->
+	<script src="./resources/js/jquery.min.js"></script>
+	<script src="./resources/js/bootstrap.bundle.min.js"></script>
+	<script src="./resources/js/apexcharts.min.js"></script>
+	<script src="./resources/js/custom.js"></script>
 	<script type="text/javascript">
-	const btnUpload = document.getElementById('btn-upload');
-    const previewContainer = document.querySelector('.preview-container');
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.style.display = 'none';
-    document.body.appendChild(fileInput);
+		$("select[name=board_type]").change(function() {
+			console.log($(this).val()); //value값 가져오기
+			var b_type = $(this).val();
+			if (b_type == 'O') {
+				$(".input-group").css("display","block");
+			}else{
+				$(".input-group").css("display","none");
+			};
+			console.log($("select[name=board_type] option:selected").text()); //text값 가져오기
+		});
+		
 
-    btnUpload.addEventListener('click', () => {
-        fileInput.click();
-    });
+		
+		function submitfrm(){
+			
+		    document.getElementById('inputGroupFile04').addEventListener('change', function(e) {
+		        const fileInput = e.target;
+		        if (fileInput.files.length > 0) {
+		            const fileName = fileInput.files[0].name;
+		            console.log('파일 이름:', fileName);
 
-    fileInput.addEventListener('change', () => {
-        const files = fileInput.files;
-        for (const file of files) {
-            const reader = new FileReader();
-
-            reader.onload = (e) => {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.classList.add('preview-image');
-                img.addEventListener('click', () => {
-                    fileInput.click();
-                    fileInput.addEventListener('change', () => {
-                        const newFile = fileInput.files[0];
-                        if (newFile) {
-                            const newReader = new FileReader();
-                            newReader.onload = (event) => {
-                                img.src = event.target.result;
-                            };
-                            newReader.readAsDataURL(newFile);
-                        }
-                    });
-                });
-                previewContainer.innerHTML = '';
-                previewContainer.style.display = 'block'; // Display the container
-                previewContainer.appendChild(img);
-
-                // Hide the add-btn after uploading an image
-                btnUpload.style.display = 'none';
-            };
-
-            reader.readAsDataURL(file);
-        }
-    });
-
+		            // 파일 이름을 숨겨진 필드에 설정 (서버로 전송되도록 함)
+		            document.getElementById('hidden-file-name').value = fileName;
+		        }
+		    });
+			
+			
+			$(".input-group").css("display","none");
+			$("#frm").submit();
+						
+		}
 	</script>
-
-
-	<!-- 앨범/자유 전환 스크립트 -->
-	<script type="text/javascript">
-	
-	
-	const boardTagSelect = document.getElementById('board_tag');
-	const imageUploadDiv = document.getElementById('image_upload');
-	
-	imageUploadDiv.style.display = 'none';
-
-	boardTagSelect.addEventListener('change', () => {
-	    if (boardTagSelect.value === '2') { // 앨범 게시판이 선택된 경우
-	        imageUploadDiv.style.display = 'flex'; // 보여줌
-	    } else {
-	        imageUploadDiv.style.display = 'none'; // 숨김
-	    }
-	});
-	</script>
-	
-
-
 </body>
 </html>

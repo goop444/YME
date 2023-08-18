@@ -16,8 +16,6 @@ public class JoinController {
 	
 	@RequestMapping("/registerPage.do")
 	public String Page() {
-		//Member vo
-		//mapper.insertMember(vo);
 		return "view_join";
 	}
 	
@@ -32,9 +30,9 @@ public class JoinController {
 	public @ResponseBody int IdCheck(String userid) {
 		int a = mapper.checkId(userid);
 		
-		System.out.println(a);
 		return a;
 	}
+	
 	@RequestMapping("/nick_check.do")
 	public @ResponseBody int NickCheck(String nick) {
 		

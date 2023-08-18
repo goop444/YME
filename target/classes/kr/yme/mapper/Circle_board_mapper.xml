@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="kr.yme.mapper.Circle_board_mapper">
+	
+	
+	<select id="selectDetail" parameterType="int" resultType="kr.yme.entity.Circle">
+		select * from Circle where circle_seq = #{circle_seq}
+	</select>	
+	
+	<select id="selectName" parameterType="int" resultType="kr.yme.entity.Member">
+		select Circle.id, Member.name FROM Circle JOIN Member ON Circle.id = Member.id where circle_seq = #{circle_seq}
+	</select>	
+
+	<select id="selectBoard"  resultType="kr.yme.entity.Circle_board">
+		SELECT * FROM Circle_board cb JOIN Member m ON cb.id = m.id WHERE circle_seq = #{circle_seq}
+	</select>	
+	
+	
+	<select id="selectAdetail" resultType="kr.yme.entity.Circle_board">
+		select * from Circle_board Where board_seq = 3
+	</select>
+	
+	<select id="selectAname"  resultType="kr.yme.entity.Member">
+		select Circle.id, Member.name FROM Circle JOIN Member ON Circle.id = Member.id where circle_seq = 1
+	</select>
+	
+	
+	 <select id="selectTdetail" resultType="kr.yme.entity.Circle_board">
+		select * from Circle_board Where board_seq = 6
+	</select> 
+	
+	<insert id="insertBoard" parameterType="kr.yme.entity.Circle_board">
+		insert into Circle_board(circle_seq, id, board_title, board_content, board_type, board_at)
+values( 3, '1234', #{board_title}, #{board_content}, #{board_type}, now() )
+	</insert>
+	
+	<insert id="insertImageBoard" parameterType="kr.yme.entity.Circle_board">
+		insert into Circle_board(circle_seq, id, board_title, board_content, board_img, board_type, board_at)
+values( 3, #{id}, #{board_title}, #{board_content}, #{board_img}, #{board_type}, now() )
+	</insert>
+	
+</mapper>
